@@ -11,7 +11,6 @@ namespace Main
         private List<Edge> incidentEdges = null;
         private int distance;
         private bool isVisited;
-        private List<Node> shortestPath;
 
         public Node(String info)
         {
@@ -58,21 +57,10 @@ namespace Main
             return false;
         }
 
-        public void setShortestPath(List<Node> shortestPath)
-        {
-            this.shortestPath = shortestPath;
-        }
-
-        public List<Node> getShortestPath()
-        {
-            return shortestPath;
-        }
-
         public void startDijkstra(int vertexNumber)
         {
             distance = int.MaxValue;
             isVisited = false;
-            shortestPath = new List<Node>();
         }
     }
 }

@@ -167,7 +167,15 @@ namespace Main
             {
                 if (i == splitedPath.Length - 1)
                 {
-                    str = splitedPath[i];
+                    if (!splitedPath[i].Equals(parentsPath[0].getInfo())) //Case when concatenating path and the loop doesn't enter to concatenate initialNode
+                    {
+                        str = parentsPath[0].getInfo() + " -> " + splitedPath[i];
+                    }
+                    else
+                    {
+                        str = splitedPath[i];
+                    }
+                    
                 }
                 else
                 {

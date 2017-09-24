@@ -6,13 +6,13 @@ namespace Main
     {
         static void Main(string[] args)
         {
-
+            secondExample();
             Console.Read();
         }
 
-        public void firstExample()
+        public static void firstExample()
         {
-            Graph graph = new Graph(false);
+            Graph graph = new Graph(true);
             graph.addNode("1");
             graph.addNode("2");
             graph.addNode("3");
@@ -59,9 +59,9 @@ namespace Main
             graph.distanceFrom();
         }
 
-        public void secondExample()
+        public static void secondExample()
         {
-            Graph graph = new Graph(false);
+            Graph graph = new Graph(true);
             graph.addNode("0");
             graph.addNode("1");
             graph.addNode("2");
@@ -81,7 +81,7 @@ namespace Main
             graph.addEdge(node2, node1, 4, 0);
             graph.addEdge(node3, node1, 1, 0);
             graph.dijkstraAlgorithm(node0);
-            graph.printPath(node0);
+            graph.printPath(node4);
         }
     }
 }
