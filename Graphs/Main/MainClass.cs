@@ -82,6 +82,7 @@ namespace Main
             graph.addEdge(node3, node1, 1, 0);
             graph.dijkstraAlgorithm(node0);
             graph.printPath(node4);
+            graph.distanceFrom();
         }
     }
 }

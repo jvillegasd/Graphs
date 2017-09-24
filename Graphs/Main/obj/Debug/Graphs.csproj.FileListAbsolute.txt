@@ -4,3 +4,9 @@ C:\Users\Johnny\Desktop\Graphs\Main\bin\Debug\Main.pdb
 C:\Users\Johnny\Desktop\Graphs\Main\obj\Debug\Graphs.csprojResolveAssemblyReference.cache
 C:\Users\Johnny\Desktop\Graphs\Main\obj\Debug\Main.exe
 C:\Users\Johnny\Desktop\Graphs\Main\obj\Debug\Main.pdb
+C:\Users\Johnny\Desktop\Carpetas y demas\Programacion\Creaciones\Graphs\Main\bin\Debug\Main.exe.config
+C:\Users\Johnny\Desktop\Carpetas y demas\Programacion\Creaciones\Graphs\Main\obj\Debug\Main.exe
+C:\Users\Johnny\Desktop\Carpetas y demas\Programacion\Creaciones\Graphs\Main\obj\Debug\Main.pdb
+C:\Users\Johnny\Desktop\Carpetas y demas\Programacion\Creaciones\Graphs\Main\bin\Debug\Main.exe
+C:\Users\Johnny\Desktop\Carpetas y demas\Programacion\Creaciones\Graphs\Main\bin\Debug\Main.pdb
+C:\Users\Johnny\Desktop\Carpetas y demas\Programacion\Creaciones\Graphs\Main\obj\Debug\Graphs.csprojResolveAssemblyReference.cache
