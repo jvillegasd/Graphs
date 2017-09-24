@@ -7,7 +7,7 @@ namespace Main
     {
         private List<Node> nodes = null;
         private List<Edge> edges = null;
-        private List<Node> parentsPath = null;
+        private List<Node> parentsPath = null;  //This both list<Node> (parentsPath and childrenPath) saves all parents and children nodes with shortest path
         private List<Node> childrenPath = null;
         private bool isDirected = false;
 
@@ -126,11 +126,11 @@ namespace Main
             }
         }
 
-        public void printPath(Node finalNode)
-        {
+        public void printPath(Node finalNode)                        //This both list<Node> have all nodes with shortest path. In a index of parentsPath it child is ubicated
+        {                                                            //in the same index in childrenPath
             int indexC = childrenPath.Count - 1;
             Node auxNode = childrenPath[indexC];
-            while (indexC > 0 && !auxNode.Equals(finalNode))
+            while (indexC > 0 && !auxNode.Equals(finalNode))  //Search finalNode position in childrenPath
             {
                 indexC--;
                 auxNode = childrenPath[indexC];
@@ -138,11 +138,11 @@ namespace Main
             if (auxNode.Equals(finalNode))
             {
                 String path = auxNode.getInfo();
-                while (indexC > 0)
+                while (indexC > 0)                                
                 {
-                    path = path + " " + parentsPath[indexC].getInfo();
+                    path = path + " " + parentsPath[indexC].getInfo();  //Concatenate it parent
                     Node parentNode = parentsPath[indexC];
-                    while (indexC > 0 && !auxNode.Equals(parentNode))
+                    while (indexC > 0 && !auxNode.Equals(parentNode))  //Now, search the parent of parent, in this case the previous parent in now a child
                     {
                         indexC--;
                         auxNode = childrenPath[indexC];
@@ -167,7 +167,7 @@ namespace Main
             {
                 if (i == splitedPath.Length - 1)
                 {
-                    if (!splitedPath[i].Equals(parentsPath[0].getInfo())) //Case when concatenating path and the loop doesn't enter to concatenate initialNode
+                    if (!splitedPath[i].Equals(parentsPath[0].getInfo()))  //Case when concatenating path and the loop in printPath() doesn't enter to concatenate initialNode
                     {
                         str = parentsPath[0].getInfo() + " -> " + splitedPath[i];
                     }
