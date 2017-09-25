@@ -39,32 +39,19 @@ namespace Main
             int index = 0;
             while (index < queue.Count - 1) //The array needs to get sorted to hold heap rules
             {
-                int min = index;
-                if (2 * min + 1 < queue.Count && queue[min].getDistance().CompareTo(queue[2 * min + 1].getDistance()) == 1) //Check if left child is bigger than it queue[index]
+                if ((2 * index + 1) < queue.Count && queue[index].getDistance().CompareTo(queue[2 * index + 1].getDistance()) == 1) //Check if left child is bigger than it queue[index]
                 {                                                                                                          //(it parent)
-                    Node auxNode = queue[min];
-                    queue[min] = queue[2 * min + 1];
-                    queue[2 * min + 1] = auxNode;
-                    min = 2 * min + 1;
-                }
-                if (2 * min + 2 < queue.Count && queue[min].getDistance().CompareTo(queue[2 * min + 2].getDistance()) == 1) //Check if right child is bigger than it queue[index]
-                {                                                                                                           //(it parent)
-                    Node auxNode = queue[min];
-                    queue[min] = queue[2 * min + 2];
-                    queue[2 * min + 2] = auxNode;
-                    min = 2 * min + 2;
-                }
-                if (min == index)
-                {
-                    break;
-                }
-                else    //Change positions (depends of conditional), after that, analize node at new index position
-                {
                     Node auxNode = queue[index];
-                    queue[index] = queue[min];
-                    queue[min] = auxNode;
-                    index = min;
+                    queue[index] = queue[2 * index + 1];
+                    queue[2 * index + 1] = auxNode;
                 }
+                if ((2 * index + 2) < queue.Count && queue[index].getDistance().CompareTo(queue[2 * index + 2].getDistance()) == 1) //Check if right child is bigger than it queue[index]
+                {                                                                                                           //(it parent)
+                    Node auxNode = queue[index];
+                    queue[index] = queue[2 * index + 2];
+                    queue[2 * index + 2] = auxNode;
+                }
+                index++;
             }
             return node;
         }
