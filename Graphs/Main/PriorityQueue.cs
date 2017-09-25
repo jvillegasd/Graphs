@@ -18,7 +18,7 @@ namespace Main
             queue = new List<Node>();
         }
 
-        public void push(Node node)
+        public void pushMinHeap(Node node)
         {
             queue.Add(node);                                                    //when add a new node, it's added at the last array position, the result
             int index = queue.Count - 1;                                        // is that binary tree will be breaking heap rules and the new node will need to search it position.
@@ -39,7 +39,7 @@ namespace Main
             int index = 0;
             while (index < queue.Count - 1) //The array needs to get sorted to hold heap rules
             {
-                int min = 0;
+                int min = index;
                 if (2 * min + 1 < queue.Count && queue[min].getDistance().CompareTo(queue[2 * min + 1].getDistance()) == 1) //Check if left child is bigger than it queue[index]
                 {                                                                                                          //(it parent)
                     Node auxNode = queue[min];

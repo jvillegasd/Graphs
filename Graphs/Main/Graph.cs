@@ -87,7 +87,7 @@ namespace Main
         public void dijkstraAlgorithm(Node initialNode)
         {
             PriorityQueue priorityQueue = new PriorityQueue();
-            priorityQueue.push(initialNode);
+            priorityQueue.pushMinHeap(initialNode);
             parentsPath.Clear();
             childrenPath.Clear();
             foreach (Node node in nodes)
@@ -122,7 +122,7 @@ namespace Main
                 adjacentNode.setDistance(actualNode.getDistance() + weight);
                 pPath.Add(actualNode);
                 cPath.Add(adjacentNode);
-                priorityQueue.push(adjacentNode);
+                priorityQueue.pushMinHeap(adjacentNode);
             }
         }
 
