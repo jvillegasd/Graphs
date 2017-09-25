@@ -6,7 +6,7 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            secondExample();
+            thirdExample();
             Console.Read();
         }
 
@@ -82,6 +82,52 @@ namespace Main
             graph.addEdge(node3, node1, 1, 0);
             graph.dijkstraAlgorithm(node0);
             graph.printPath(node4);
+            graph.distanceFrom();
+        }
+
+        public static void thirdExample()
+        {
+            Graph graph = new Graph(false);
+            graph.addNode("1");
+            graph.addNode("2");
+            graph.addNode("3");
+            graph.addNode("4");
+            graph.addNode("5");
+            graph.addNode("6");
+            graph.addNode("7");
+            graph.addNode("8");
+            graph.addNode("9");
+            graph.addNode("10");
+            Node node1 = graph.getNode("1");
+            Node node2 = graph.getNode("2");
+            Node node3 = graph.getNode("3");
+            Node node4 = graph.getNode("4");
+            Node node5 = graph.getNode("5");
+            Node node6 = graph.getNode("6");
+            Node node7 = graph.getNode("7");
+            Node node8 = graph.getNode("8");
+            Node node9 = graph.getNode("9");
+            Node node10 = graph.getNode("10");
+            graph.addEdge(node1, node3, 45, 0);
+            graph.addEdge(node1, node2, 20, 0);
+            graph.addEdge(node1, node10, 45, 0);
+            graph.addEdge(node2, node3, 30, 0);
+            graph.addEdge(node2, node10, 30, 0);
+            graph.addEdge(node2, node8, 100, 0);
+            graph.addEdge(node2, node5, 25, 0);
+            graph.addEdge(node3, node4, 45, 0);
+            graph.addEdge(node4, node5, 75, 0);
+            graph.addEdge(node4, node6, 40, 0);
+            graph.addEdge(node5, node8, 90, 0);
+            graph.addEdge(node5, node6, 75, 0);
+            graph.addEdge(node6, node7, 80, 0);
+            graph.addEdge(node6, node9, 40, 0);
+            graph.addEdge(node9, node8, 45, 0);
+            graph.addEdge(node7, node8, 15, 0);
+            graph.addEdge(node8, node10, 50, 0);
+            graph.addEdge(node8, node5, 90, 0);
+            graph.dijkstraAlgorithm(node4);
+            graph.printPath(node10);
             graph.distanceFrom();
         }
     }
