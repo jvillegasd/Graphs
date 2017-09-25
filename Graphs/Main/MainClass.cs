@@ -6,13 +6,13 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            firstExample();
+            secondExample();
             Console.Read();
         }
 
         public static void firstExample()
         {
-            Graph graph = new Graph(false);
+            Graph graph = new Graph(true);
             graph.addNode("1");
             graph.addNode("2");
             graph.addNode("3");
