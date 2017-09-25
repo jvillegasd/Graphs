@@ -22,7 +22,7 @@ namespace Main
         {
             queue.Add(node);                                                    //when add a new node, it's added at the last array position, the result
             int index = queue.Count - 1;                                        // is that binary tree will be breaking heap rules and the new node will need to search it position.
-            while (index > 0 && queue[index].getDistance().CompareTo(queue[(index - 1) / 2].getDistance()) == -1) //How the new node it's in the last array position, it's a child, and
+            while (index > 0 && queue[index].getDistance() < queue[(index - 1) / 2].getDistance()) //How the new node it's in the last array position, it's a child, and
             {                                                                                               //it needs to search it parent position.                                 
                 Node auxNode = queue[index];
                 queue[index] = queue[(index - 1) / 2];
@@ -39,13 +39,13 @@ namespace Main
             int index = 0;
             while (index < queue.Count - 1) //The array needs to get sorted to hold heap rules
             {
-                if (2 * index + 1 < queue.Count && queue[index].getDistance().CompareTo(queue[2 * index + 1].getDistance()) == 1) //Check if left child is bigger than it queue[index]
+                if (2 * index + 1 < queue.Count && queue[index].getDistance() > queue[2 * index + 1].getDistance()) //Check if left child is bigger than it queue[index]
                 {                                                                                                          //(it parent)
                     Node auxNode = queue[index];
                     queue[index] = queue[2 * index + 1];
                     queue[2 * index + 1] = auxNode;
                 }
-                if (2 * index + 2 < queue.Count && queue[index].getDistance().CompareTo(queue[2 * index + 2].getDistance()) == 1) //Check if right child is bigger than it queue[index]
+                if (2 * index + 2 < queue.Count && queue[index].getDistance() > queue[2 * index + 2].getDistance()) //Check if right child is bigger than it queue[index]
                 {                                                                                                           //(it parent)
                     Node auxNode = queue[index];
                     queue[index] = queue[2 * index + 2];

@@ -190,7 +190,7 @@ namespace Main
             Console.WriteLine("\nDistances from node {0}:\n", parentsPath[0].getInfo());
             foreach (Node node in nodes)
             {
-                Console.WriteLine("Node {0} to node {1} is {2}", 1, node.getInfo(), node.getDistance());
+                Console.WriteLine("Node {0} to node {1} is {2}", parentsPath[0].getInfo(), node.getInfo(), node.getDistance());
             }
             Console.WriteLine();
         }
