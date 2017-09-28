@@ -55,6 +55,7 @@ namespace Main
                 if (isDirected)
                 {
                     initialNode.getIncidentEdges().Add(newEdge);
+                    edges.Add(newEdge);
                 }
                 else
                 {
@@ -62,14 +63,16 @@ namespace Main
                     {
                         initialNode.getIncidentEdges().Add(newEdge);
                         addEdge(finalNode, initialNode, weight, 1);
+                        edges.Add(newEdge);
                     }
                     else
                     {
                         initialNode.getIncidentEdges().Add(newEdge);
+                        edges.Add(newEdge);
                     }
                 }  
             }
-            edges.Add(newEdge);
+            
         }
 
         public Node getNode(String info)
@@ -126,8 +129,8 @@ namespace Main
             }
         }
 
-        public void printPath(Node finalNode)                        //This both list<Node> have all nodes with shortest path. In a index of parentsPath it child is ubicated
-        {                                                            //in the same index in childrenPath
+        public void printPath(Node finalNode)    //This both list<Node> have all nodes with shortest path. In a index of parentsPath it child is ubicated
+        {                                       //in the same index in childrenPath
             int indexC = childrenPath.Count - 1;
             Node auxNode = childrenPath[indexC];
             while (indexC > 0 && !auxNode.Equals(finalNode))  //Search finalNode position in childrenPath
